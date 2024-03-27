@@ -25,3 +25,5 @@ jobs:
         run: nohup python main.py &
       - name: Test with pytest
         run: python tests.py
+      - name: curl checl
+        run: curl localhost:5000/health
