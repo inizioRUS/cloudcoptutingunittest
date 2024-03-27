@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 li = {}
 app = Flask(__name__)
@@ -8,6 +8,12 @@ app = Flask(__name__)
 def allgetaa():
     if request.method == "GET":
         return '42'
+@app.route('/health', methods=['GET'])
+def helth():
+    if request.method == "GET":
+        resp = jsonify(success=True)
+        resp.status_code = 200
+        return resp
 
 
 if __name__ == "__main__":
