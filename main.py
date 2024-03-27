@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/give42', methods=['GET'])
-def allgeta():
+def allgetaa():
     if request.method == "GET":
         return '42'
 
