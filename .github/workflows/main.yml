@@ -24,4 +24,4 @@ jobs:
       - name: Start service
         run: nohup python main.py &
       - name: Test with pytest
-        run: pytest tests.py 
+        run: python tests.py
