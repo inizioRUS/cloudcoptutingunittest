@@ -22,6 +22,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Start service
-        run: waitress-serve --listen=localhost:5000 main:app
+        run: nohup python main.py &
       - name: Test with pytest
         run: pytest tests.py 
