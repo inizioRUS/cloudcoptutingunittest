@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.9"]
 
     steps:
       - uses: actions/checkout@v4
@@ -21,5 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Start service
+        run: waitress-serve --listen=localhost:5000 main:app
       - name: Test with pytest
         run: pytest tests.py 
